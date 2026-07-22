@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - master
+      - common-to-common2-migration-plan
   schedule:
     # 01:00 UTC every day.
     - cron: "0 1 * * *"
@@ -36,7 +37,7 @@ permissions:
 
 jobs:
   migration-dashboard:
-    if: github.repository_owner == 'sonic-net'
+    if: github.repository_owner == 'sonic-net' || github.repository_owner == 'opcoder023'
     name: Generate common2 migration dashboard
     runs-on: ubuntu-latest
     env:
